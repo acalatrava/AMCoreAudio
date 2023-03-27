@@ -1,6 +1,6 @@
-module: SimplyCoreAudio
-author: Ruben Nine
-github_url: https://github.com/rnine/SimplyCoreAudio
+module: AMCoreAudio
+author: 9Labs
+github_url: https://github.com/rnine/AMCoreAudio
 
 theme: fullwidth
 clean: true
@@ -10,4 +10,4 @@ readme: README.md
 skip_undocumented: false
 hide_documentation_coverage: false
 
-swift_build_tool: spm
+xcodebuild_arguments: [-project, AMCoreAudio.xcodeproj, -target, AMCoreAudio]

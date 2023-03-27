@@ -4,34 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "SimplyCoreAudio",
-    platforms: [.macOS(.v10_12)],
-    
+    name: "AMCoreAudio",
+    platforms: [.macOS(.v10_10)],
     products: [
-        .library(name: "SimplyCoreAudio",
-                 targets: ["SimplyCoreAudio"])
+        .library(name: "AMCoreAudio", targets: ["AMCoreAudio"])
     ],
-    
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-atomics.git", from: "1.0.0")
-    ],
-    
+    dependencies: [],
     targets: [
-        .target(
-            name: "SimplyCoreAudio",
-            dependencies: [
-                .target(name: "SimplyCoreAudioC"),
-                .product(name: "Atomics", package: "swift-atomics")
-            ]
-        ),
-        .target(name: "SimplyCoreAudioC",
-                publicHeadersPath: "."
-        ),
-        .testTarget(
-            name: "SimplyCoreAudioTests",
-            dependencies: ["SimplyCoreAudio"]
-        ),
-
+        .target(name: "AMCoreAudio", path: "Source"),
+        .testTarget(name: "AMCoreAudioTests", dependencies: ["AMCoreAudio"], path: "Tests")
     ],
     swiftLanguageVersions: [.v4, .v4_2, .v5]
 )
